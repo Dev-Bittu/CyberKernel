@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% block title %}Profile{% endblock %}
+{% block breadcrumb %}
+    <li class="breadcrumb-item">
+      <a href="#" class="text-decoration-none">
+        account
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      profile
+    </li>
+{% endblock %}
+{% block body %}
+{% load static %}
+<div class="container-fluid col-sm-11 col-md-9">
+  <div class="row mt-3">
+    <div class="col-8">
+      <h1>Edit Profile</h1>
+    </div>
+    <div class="col-4">
+      <a class="btn btn-warning text-decoration-none float-end" href="{% url 'profile_edit' %}">
+        Edit
+      </a>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <img src="{{ request.user.avatar.url }}" alt="User's avatar" class="rounded-circle">
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGrid" placeholder="First name" value="{{ request.user.first_name }}" disabled readonly>
+        <label for="floatingInputGrid">
+          First name
+        </label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGrid" placeholder="Last name" value="{{ request.user.last_name }}" disabled readonly>
+        <label for="floatingInputGrid">
+          Last name
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGrid" placeholder="Username" value="{{ request.user.username }}" disabled readonly>
+        <label for="floatingInputGrid">
+          Username
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md">
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="{{ request.user.email }}" disabled readonly>
+        <label for="floatingInputGrid">
+          Email address
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGrid" placeholder="Date joined" value="{{ request.user.date_joined }}" disabled readonly>
+        <label for="floatingInputGrid">
+          Date joined
+        </label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGrid" placeholder="Date of birth" value="{{ request.user.dob }}" disabled readonly>
+        <label for="floatingInputGrid">
+          Date of birth
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

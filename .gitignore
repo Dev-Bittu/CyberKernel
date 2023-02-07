@@ -1,0 +1,12 @@
+*.log
+*.pyc
+__pycache__/
+/media
+!/media/account/avatar/default.png
+!/blog/blog/empty.txt
+!/blog/category/empty.txt
+db.sqlite3
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+/.idea.txt
