@@ -1,7 +1,6 @@
 *.log
 *.pyc
 __pycache__/
-!/media/account/avatar/default.png
 !/blog/blog/empty.txt
 !/blog/category/empty.txt
 db.sqlite3
@@ -9,4 +8,11 @@ db.sqlite3
 !**/migrations
 !**/migrations/__init__.py
 /.idea.txt
-/media
+
+!media/
+media/*
+!media/account/
+media/account/*
+!media/account/avatar/
+media/account/avatar/*
+!media/account/avatar/default.png
