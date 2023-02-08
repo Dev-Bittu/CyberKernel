@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block title %}Post{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item active" aria-current="page">
+      post
+    </li>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid col-md-10">
+  <div class="row mt-5">
+    <h1 class="text-center">
+      Add New Post
+    </h1>
+  </div>
+  <div class="row">
+    <form action="{% url 'post' %}" method="post" class="needs-validation" enctype="multipart/form-data">
+      {% csrf_token %}
+	  <div class="row form-floating mt-4">
+        <input type="text" class="form-control ms-3 me-3" id="title" placeholder="Title" name="title" required maxlength="100">
+        <label for="title" class="ms-3">
+          Title
+        </label>
+     </div>
+	 <div class="row justify-content-evenly mt-4">
+	  <div class="col-md-3 mt-4">
+	   <label for="category">
+         Category:
+       </label>
+       <select name="category" required id="category" multiple>
+         <option value="1">
+           Gg
+         </option>
+       </select>
+      </div>
+     <div class="col-md-3 mt-4">
+        <label for="thumbnail">
+          Thumbnail:
+        </label>
+        <input type="file" name="thumbnail" required id="thumbnail">
+     </div>
+     </div>
+     <div class="col-md-3 mt-4">
+       <label for="auther">
+         Auther:
+       </label>
+       <select name="auther" id="auther">
+  <option value="1" selected>
+    {{ request.user }}
+  </option>
+</select>
+    </div>
+    </div>
+     <div class="row mt-4">
+        <label for="description">
+          Description: 
+        </label>
+        <textarea name="description" rows="10" maxlength="70" required id="description" class="w-100 ms-3 me-3" placeholder="Description"></textarea>
+     </div>
+     <div class="row mt-4">
+       <label for="content">
+          Content:
+        </label>
+       <div class="django-ckeditor-widget" data-field-id="id_content" style="display: inline-block;">
+       <textarea name="content" cols="40" rows="10" required id="id_content" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: &quot;Full&quot;, &quot;height&quot;: 291, &quot;width&quot;: 835, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="content" data-type="ckeditortype"></textarea>
+     </div>
+   </div>
+     <button class="btn btn-success w-100 mt-4">
+       Save
+     </button>
+    </form>
+  </div>
+</div>
+{{ form.media }}
+{% endblock %}

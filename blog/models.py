@@ -16,7 +16,7 @@ class Category(models.Model):
 class Post(models.Model):
     auther = models.ForeignKey(to=User, on_delete=models.CASCADE)
     category = models.ManyToManyField(to=Category)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
     description = models.TextField(max_length=70)
     slug = models.SlugField(unique=True, default='')
     thumbnail = models.ImageField(upload_to='blog/blog')

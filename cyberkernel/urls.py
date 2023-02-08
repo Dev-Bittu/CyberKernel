@@ -25,6 +25,7 @@ def test(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('post/', views.post, name='post'),
     path('account/', include('account.urls')),
     path('blog/', include('blog.urls')),
     path('trending/', views.trending, name='trending'),
