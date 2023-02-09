@@ -64,7 +64,7 @@ def register(request):
         	return redirect('register')
     return render(request, 'account/register.html')
 
-@login_required(login_url='/login/')
+@login_required()
 def logout_view(request):
     logout(request)
     messages.info(
@@ -73,15 +73,15 @@ def logout_view(request):
     )
     return redirect('index')
 
-@login_required(login_url='/login/')
+@login_required()
 def setting(request):
     return render(request, 'account/setting.html')
 
-@login_required(login_url='/login/')
+@login_required()
 def profile(request):
     return render(request, 'account/profile.html')
 
-@login_required(login_url='/login/')
+@login_required()
 def profile_edit(request):
 	if request.method == 'POST':
 		user = User.objects.get(pk=request.user.pk)
