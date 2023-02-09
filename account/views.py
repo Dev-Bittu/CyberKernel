@@ -50,7 +50,8 @@ def register(request):
             password=make_password(
             	password
             ),
-            email=email
+            email=email,
+            ip = request.META.get('REMOTE_ADDR')
             )
             user.save()
             login(request, user)
