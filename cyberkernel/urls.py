@@ -19,9 +19,6 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-def test(request):
-    print(request.user)
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
@@ -37,3 +34,5 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'cyberkernel.views.error_404'
