@@ -38,11 +38,11 @@ python3 manage.py runserver|| python manage.py runserver
 apt install python3 git libjpeg-turbo -y
 pip install wheel
 ```
-####### If your system is based on aarch64.
+###### If your system is based on aarch64.
 ```bash
 LDFLAGS="-L/system/lib64/"; CFLAGS="-I/data/data/com.termux/files/usr/include" #Required for pillow (pip)
 ```
-####### Else
+###### Else
 ```bash
 LDFLAGS="-L/system/lib/"; CFLAGS="-I/data/data/com.termux/files/usr/include" #Required for pillow (pip)                                               ```
 
