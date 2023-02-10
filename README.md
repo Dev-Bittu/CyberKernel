@@ -37,6 +37,7 @@ python3 manage.py runserver|| python manage.py runserver
 ```bash
 apt install python3 git libjpeg-turbo -y
 pip install wheel
+apt install python-cryptography -y
 ```
 ###### If your system is based on aarch64.
 ```bash
