@@ -42,15 +42,15 @@
         <input type="file" name="thumbnail" required id="thumbnail">
      </div>
      </div>
-     <div class="col-md-3 mt-4">
+     <div class="col-md-3 mt-4" style="display: none;">
        <label for="auther">
          Auther:
        </label>
        <select name="auther" id="auther">
-  <option value="1" selected>
-    {{ request.user }}
-  </option>
-</select>
+  	   <option value="1" selected>
+    	   {{ request.user }}
+  	   </option>
+	   </select>
     </div>
     </div>
      <div class="row mt-4">
