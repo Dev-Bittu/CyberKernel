@@ -18,6 +18,7 @@ from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from about import views as about_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,8 +30,9 @@ urlpatterns = [
     path('category/', views.category, name='category'),
     path('category/<slug:title>', views.category_title, name='category_title'),
     path('search/', views.search, name='search'),
-    path('about/', views.about, name='about'),
-    path('terms-and-conditions', views.terms_and_conditions, name='terms&conditions')
+    path('about/', about_views.about, name='about'),
+    path('terms-and-conditions', about_views.terms_and_conditions, name='terms&conditions'),
+    path('help-and-feedback', about_views.help_and_feedback, name='help&feedback'),
 ]
 
 if settings.DEBUG:

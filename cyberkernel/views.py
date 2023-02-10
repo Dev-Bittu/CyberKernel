@@ -63,16 +63,6 @@ def post(request):
 
 
 '''
-	Simple programs
-'''	
-	
-def terms_and_conditions(request):
-	return render(request, 'cyberkernel/terms_and_conditions.html')	
-
-def about(request):
-	return HttpResponse('about page')	
-	
-'''
 	All errors zone
 '''	
 def error_404(request, exception):
