@@ -29,7 +29,8 @@ urlpatterns = [
     path('category/', views.category, name='category'),
     path('category/<slug:title>', views.category_title, name='category_title'),
     path('search/', views.search, name='search'),
-    path('about/', views.about, name='about')
+    path('about/', views.about, name='about'),
+    path('terms-and-conditions', views.terms_and_conditions, name='terms&conditions')
 ]
 
 if settings.DEBUG:

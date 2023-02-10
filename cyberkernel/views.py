@@ -5,17 +5,23 @@ from django.db.models import Q, Count
 from django.contrib.auth.decorators import login_required
 from django.contrib import  messages
 from blog.forms import PostForm
-from blog.models import Post
 
 def index(request):
-    return render(request, 'cyberkernel/index.html', {'posts': Post.objects.all()[:4], 'categories': Category.objects.all()[:4], 'trendings': Post.objects.order_by('-view')[:4]})
+    return render(
+    	request,
+    	'cyberkernel/index.html',
+    	{
+    	'posts':Post.objects.all()[:4],
+    	'categories':Category.objects.all()[:4],
+    	'trendings': Post.objects.order_by('-view')[:4]
+    	}
+    )
 
 def trending(request):
     return render(request, 'cyberkernel/trending.html', {'blogs': Post.objects.order_by('-view')[:20]})
 
 def category(request):
-    a = Post.objects.values('auther').annotate(num_blogs=Count('category'))
-    print(a)
+    #a = Post.objects.values('auther').annotate(num_blogs=Count('category'))
     return render(request, 'category/category.html', {'categories': Category.objects.all()})
 
 def category_title(request, title):
@@ -31,8 +37,7 @@ def search(request):
     return render(request, 'cyberkernel/search.html', {'objs': objs, 'query': query})
     
 
-def about(request):
-	return HttpResponse('about page')
+
 
 @login_required()	
 def post(request):
@@ -55,9 +60,17 @@ def post(request):
 	return render(request, 'cyberkernel/post.html',{
 		'form': PostForm()
 	})
+
+
+'''
+	Simple programs
+'''	
 	
-	
-	
+def terms_and_conditions(request):
+	return render(request, 'cyberkernel/terms_and_conditions.html')	
+
+def about(request):
+	return HttpResponse('about page')	
 	
 '''
 	All errors zone
