@@ -45,7 +45,8 @@ LDFLAGS="-L/system/lib64/"; CFLAGS="-I/data/data/com.termux/files/usr/include" #
 ```
 ###### Else
 ```bash
-LDFLAGS="-L/system/lib/"; CFLAGS="-I/data/data/com.termux/files/usr/include" #Required for pillow (pip)                                               ```
+LDFLAGS="-L/system/lib/"; CFLAGS="-I/data/data/com.termux/files/usr/include" #Required for pillow (pip)
+```
 
 ##### Setup Project
 ```bash
