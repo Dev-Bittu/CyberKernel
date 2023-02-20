@@ -5,9 +5,16 @@ It is a project of blog management system.
 
 ---
 
-# Installation
+# Features
+  - Login system
+  - Auther can add post
+  - Diffrent types of users
+  - Use can register, login & logout
+  - Post categories
 
-### Prerequirements
+# Getting Started
+
+### Prerequisites
 1. Python
 2. Python packages
    - django
@@ -37,15 +44,7 @@ python3 manage.py runserver|| python manage.py runserver
 ```bash
 apt install python3 git libjpeg-turbo -y
 pip install wheel
-apt install python-cryptography -y
-```
-###### If your system is based on aarch64.
-```bash
-LDFLAGS="-L/system/lib64/"; CFLAGS="-I/data/data/com.termux/files/usr/include" #Required for pillow (pip)
-```
-###### Else
-```bash
-LDFLAGS="-L/system/lib/"; CFLAGS="-I/data/data/com.termux/files/usr/include" #Required for pillow (pip)
+apt install python-cryptography python-pillow -y
 ```
 
 ##### Setup Project
@@ -58,6 +57,17 @@ python manage.py runserver
 ```
 
 ---
+# Authers
+### Bittu Kumar Goswami
+### Contact With Me
+
+# License
+This project is licensed under the MIT License - see the LICENSE file for details
+
+# TODO
+  - Convert function views to classes
+  - Add rest framework & channels (websocket)
+  - Improve UI & UX
 
 # About
 ### About this project
