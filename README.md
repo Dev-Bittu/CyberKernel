@@ -9,8 +9,16 @@ It is a project of blog management system.
   - Login system
   - Auther can add post
   - Diffrent types of users
-  - Use can register, login & logout
-  - Post categories
+  - Account system (register, login, logout)
+  - Categories system
+  - Implemented ckeditor
+  - Introduced post route for auther to post blogs
+  - Custom user model
+  - User friendly
+  - Rsponsive UI, made with bootstrap 5
+  - Custom errors pages
+
+---
 
 # Getting Started
 
@@ -33,7 +41,7 @@ apt install python3-pip -y || apt install python-pip -y
 ##### Setup Project
 ```bash
 git clone https://github.com/Dev-Bittu/CyberKernel.git
-python3-pip install -r requirements.txt || pip install -r requirements.txt
+python3 setup.py install || python setup.py install
 python3 manage.py makemigrations || python manage.py makemigrations
 python3 manage.py migrate || python manage.py migrate
 python3 manage.py runserver|| python manage.py runserver
@@ -50,24 +58,38 @@ apt install python-cryptography python-pillow -y
 ##### Setup Project
 ```bash
 git clone https://github.com/Dev-Bittu/CyberKernel.git
-pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+python setup.py install
+sh rmcache.sh
 ```
 
 ---
+
 # Authers
-### Bittu Kumar Goswami
-### Contact With Me
+Anuj & Bittu
+
+### Contact With Us
+  - [GitHub](https://github.com/Dev-Bittu "Dev-Bittu")
+
+---
 
 # License
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE "Lincense file") file for details
+
+---
 
 # TODO
   - Convert function views to classes
   - Add rest framework & channels (websocket)
   - Improve UI & UX
+  - Add log files
+  - Introduce about page
+  - Improve search functionality
+  - Introduce Comment & Reply system
+  - Add donation system
+  - Introduce middleware (Under maintaince)
+  - Add notification system
+
+---
 
 # About
 ### About this project
