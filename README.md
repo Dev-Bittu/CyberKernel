@@ -19,6 +19,7 @@ It is a project of blog management system.
   - User friendly
   - Rsponsive UI, made with bootstrap 5
   - Custom errors pages
+  - Log users activities by middlewares and by python logging module
 
 ---
 
@@ -83,7 +84,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE "Linc
   - Convert function views to classes
   - Add rest framework & channels (websocket)
   - Improve UI & UX
-  - Add log files
   - Introduce about page
   - Improve search functionality
   - Introduce Comment & Reply system
