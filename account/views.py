@@ -4,7 +4,19 @@ from django.contrib.auth.decorators import login_required
 from .models import User
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password
-from django.http import HttpResponse
+
+from cyberkernel.settings import DEBUG
+import logging
+
+logger = logging.getLogger('Account')
+logger.setLevel(logging.DEBUG) if DEBUG else logger.setLevel(logging.WARNING)
+fh = logging.FileHandler('logs/account.log')
+formatter = logging.Formatter(
+	'[*] {asctime} :: {name} :: {filename} :: {funcName} :: {lineno} :: {levelname:<8} {message}', style='{'
+	)
+fh.setFormatter(formatter)
+logger.addHandler(fh)
+
 
 # Create your views here.
 def login_view(request):
@@ -23,6 +35,7 @@ def login_view(request):
             messages.success(request, 'Logged in')
             return redirect('index')
        else:
+            logger.warning(f'Username or password incorrect of a user (login view), IP: {request.META.get("REMOTE_ADDR")} for username {username} and password {password}')
             messages.warning(request, 'Username or password incorrect')
     return render(request,'account/login.html')
 
@@ -65,7 +78,7 @@ def register(request):
         	return redirect('register')
     return render(request, 'account/register.html')
 
-@login_required()
+@login_required
 def logout_view(request):
     logout(request)
     messages.info(
@@ -74,15 +87,15 @@ def logout_view(request):
     )
     return redirect('index')
 
-@login_required()
+@login_required
 def setting(request):
     return render(request, 'account/setting.html')
 
-@login_required()
+@login_required
 def profile(request):
     return render(request, 'account/profile.html')
 
-@login_required()
+@login_required
 def profile_edit(request):
 	if request.method == 'POST':
 		user = User.objects.get(pk=request.user.pk)
