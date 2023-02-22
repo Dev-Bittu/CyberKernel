@@ -1,5 +1,6 @@
-logs/
-*.log
+!logs/
+logs/*
+!logs/README.md
 *.pyc
 __pycache__/
 !/blog/blog/empty.txt
